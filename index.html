@@ -260,7 +260,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/404.html" itemprop="url">article</a></h1>
+                <a class="post-title-link" href="/404.html" itemprop="url">DOM类型</a></h1>
         
 
         <div class="post-meta">
@@ -312,7 +312,33 @@
       
         
           
-            <h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1>
+            <h1 id="DOM类型"><a href="#DOM类型" class="headerlink" title="DOM类型"></a>DOM类型</h1><h2 id="1-Node-类型："><a href="#1-Node-类型：" class="headerlink" title="1.Node 类型："></a>1.Node 类型：</h2><h5 id="属性有-nodeType-nodeValue-nodeName节点类型，值、名-childNodes-其中保存着NodeList对象，NodeList对象是一种数组对象，用来保存一组有序节点，可用方括号访问。（childNodes-0-firstChild）-parentNode，指向文档树的父节点-previousSibling-nextSibling属性，可以访问同一列表其它节点-ownerDocument-指向整个文档的文档节点"><a href="#属性有-nodeType-nodeValue-nodeName节点类型，值、名-childNodes-其中保存着NodeList对象，NodeList对象是一种数组对象，用来保存一组有序节点，可用方括号访问。（childNodes-0-firstChild）-parentNode，指向文档树的父节点-previousSibling-nextSibling属性，可以访问同一列表其它节点-ownerDocument-指向整个文档的文档节点" class="headerlink" title="属性有:nodeType, nodeValue ,nodeName节点类型，值、名; childNodes,其中保存着NodeList对象，NodeList对象是一种数组对象，用来保存一组有序节点，可用方括号访问。（childNodes[0] == firstChild） parentNode，指向文档树的父节点,previousSibling,nextSibling属性，可以访问同一列表其它节点,ownerDocument:指向整个文档的文档节点"></a><span style="color:red">属性</span>有:nodeType, nodeValue ,nodeName节点类型，值、名; childNodes,其中保存着NodeList对象，NodeList对象是一种数组对象，用来保存一组有序节点，可用方括号访问。（childNodes[0] == firstChild） parentNode，指向文档树的父节点,previousSibling,nextSibling属性，可以访问同一列表其它节点,ownerDocument:指向整个文档的文档节点</h5><h4 id="Node操作：var-returnedNode-someNode-appendChild-newNode-插入到最后一个元素"><a href="#Node操作：var-returnedNode-someNode-appendChild-newNode-插入到最后一个元素" class="headerlink" title="Node操作：var returnedNode = someNode.appendChild(newNode)//插入到最后一个元素"></a>Node操作：var returnedNode = someNode.appendChild(newNode)//插入到最后一个元素</h4><pre><code>var returnedNode = someNode.insertBefore(newNode,null);//插入后成为最后一个节点
+</code></pre><p>//insertBefore()方法接受两个参数，要插入的节点及作为参考的节点<br>                  var returnedNode = someNode.insertBefore(newNode，someNode.firstChild);//插入成为第一个子节点<br>                  var returnedNode = someNode.replaceChild(newNode , someNode.firstChild);//替换第一个子节点<br>                 var returnedNode = someNode.removeChild(newNode , someNode.firstChild);//移除第一个子节点</p>
+<ol>
+<li>Document 类型：document对象是HTMLDocument（继承自Document类型）的一个实例，表整个HTML页面<br>Document节点的子节点：DocumentType,Element,Processing，Instruction,Comment<br>访问子节点属性：documentElement属性，指向html页面中<html>元素<pre><code>body属性，指向&lt;body&gt;元素
+doctype属性，对&lt;!DOCTYPE&gt;调用
+</code></pre></html></li>
+</ol>
+<p>文档信息：document对象有些标准Document对象所没有的属性，有：<br>               title属性，指向<title><br>               URL属性，指向页面链接完整的URL,<br>               domain属性，页面域名<br>                referrer属性，链接到当前页面的URL，<br>查找元素：getElementById(),<br>                   getElementsByTagName(‘img’) //接受一个参数，返回包含0个或多个元素的NodeList，而在html里，会返回一个HtmlCollection对象。（HtmlCollection对象的方法：namedItem(),可以通过元素的name特性取得集合的项）<br>                    getElementsByName()// 只有HTMLDocument类型才有的方法，返回带有给定name特性的所有元素。</title></p>
+<ol>
+<li>Element类型 ：节点的nodeName等于tagNamejstree kb案例.note<pre><code>父节点是Element或Document，
+</code></pre>HTML元素是由HTMLElement或者更具体的子类表示：<pre><code>    属性：id ,className, title，textContent
+html   元素：button，form，body,input等
+</code></pre></li>
+</ol>
+<p>特性操作</p>
+<p><div id="myDiv"> </div><br>var div = document.getElementById(‘myDiv”);<br>取得特性：alert(div.getAttribute(“id”));   //id,class CSS类,title附加说明信息,lang,dir语言方向<br>设置特性：div.setAttribute(“id”,”someOtherId”);<br>删除特性：div.removeAttribute(“id”);</p>
+<p>attributes属性：Element是使用attributes属性唯一一个DOM节点类型，<br>attributes属性包含一个NameNodeMap对象，该对象有如下方法：<br>    getNamedItem(name):返回nodeName属性等于name的节点，可写成[name]<br>    removeNamedItem(name):移除nodeName属性等于name的节点，相当于removeAttribute（）<br>    setNamedItem(node):向列表添加节点<br>    item(pos)返回位于pos位置处的节点<br>attributes属性包含一系列节点，每个节点的nodeName就是特性的名称，节点的nodeValue就是特性的值，length为节点元素长度<br>  比如 var  id = element.attributes.getNamedItem( “id“).nodeValue;<br>创建元素：var  div = document.createElement(“div”);</p>
+<ol>
+<li><p>Text类型： 纯文本内容，可包含转义后html字符，不含html代码。</p>
+<pre><code>Text节点parentNode是一个Element，
+</code></pre><p>创建文本节点：document.createTextNode(”<strong> Hello </strong>“)<br>例：var element  = document.createElement(“div”);//创建元素<br>   element.className = “message”;//Element属性<br>   var textNode = document.createTextNode(“hello world”);//创建Text类型<br>  element.appendChild(textNode);//插入到div中</p>
+<p> document.body.appendChild(element);//将div插入到body中</p>
+</li>
+<li><p>Comment类型 ：注释，parentNode是一个Element或Document</p>
+</li>
+</ol>
+
           
         
       
