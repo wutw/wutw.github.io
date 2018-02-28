@@ -260,7 +260,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/404.html" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/404.html" itemprop="url">webpack 与 gulp 问题与解决</a></h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T21:07:51+08:00">
-                2018-02-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T14:39:49+08:00">
+                2017-10-19
               </time>
             
 
@@ -312,9 +312,8 @@
       
         
           
-            <p>#webpack 与 gulp 问题与解决<br>项目地址：<a href="https://github.com/wutw/webAuto/" target="_blank" rel="external">https://github.com/wutw/webAuto/</a></p>
-<p>##问题与解决</p>
-<ol>
+            <h1 id="webpack-与-gulp-问题与解决"><a href="#webpack-与-gulp-问题与解决" class="headerlink" title="webpack 与 gulp 问题与解决"></a>webpack 与 gulp 问题与解决</h1><p>项目地址：<a href="https://github.com/wutw/webAuto/" target="_blank" rel="external">https://github.com/wutw/webAuto/</a></p>
+<h2 id="问题与解决"><a href="#问题与解决" class="headerlink" title="问题与解决"></a>问题与解决</h2><ol>
 <li>用import载入模块，报错 :unexpected token import<br><p>原因：浏览器不能识别es6,编译时确保所有模块用babel解析为es5</p><br><p>解决：&lt; <a href="https://elanderson.net/2016/09/unexpected-token-import-with-gulp/" target="_blank" rel="external">https://elanderson.net/2016/09/unexpected-token-import-with-gulp/</a> &gt; </p><br>新建.babelrc文件</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> &quot;presets&quot;: [ &quot;es2015&quot;]</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
